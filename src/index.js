@@ -1,23 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AuthContextProvider } from './Context/AuthContext';
-import Logout from './Pages/Logout';
-import { postRequest } from './Utils/Services';
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <AuthContextProvider>
-      <Routes>
-        <Route path="/*" element={<App />} />
-        <Route path="/Logout" element={<Logout />} />
-      </Routes>
-    </AuthContextProvider>
-  </BrowserRouter>
+  // <React.StrictMode>
+  <Provider store={store}>
+  <App />
+</Provider>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
