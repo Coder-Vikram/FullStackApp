@@ -1,10 +1,10 @@
 import React from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import SignInPage from './SignInPage';
-import SignUpPage from './SignUpPage';
-import ChatPage from './ChatPage';
-import Navbar from './Navbar';
-import ProtectedRoute from './ProtectedRoute';
+import SignInPage from './Pages/SignInPage';
+import SignUpPage from './Pages/SignUpPage';
+import ChatPage from './Pages/ChatPage';
+import Navbar from './Components/Navbar';
+import ProtectedRoute from './Services/ProtectedRoute';
 
 function AppContent() {
     const location = useLocation();
